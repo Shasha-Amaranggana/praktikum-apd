@@ -33,13 +33,13 @@ print("92° C ke Reamur = " + str(suhu_2_R) + "° R")
 # Jumlah dan rata-rata suhu konversi
 Jumlah = suhu_1_F + suhu_2_F + suhu_1_K + suhu_2_K + suhu_1_R + suhu_2_R
 Rata2 = Jumlah / 6
-print("Total suhu yang telah dikonversikan adalah", Jumlah)
-print("Hasil variabel Jumlah dibagi dengan banyak data adalah", Rata2)
+print("Total suhu yang telah dikonversikan adalah " + str(Jumlah))
+print("Hasil variabel Jumlah dibagi dengan banyak data adalah " + str(Rata2))
 
 # NIM dan bandingkan dengan rata-rata
 NIM = 63
-print("NIM saya adalah", NIM)
+print("NIM saya adalah " + str(NIM))
 Bolean = NIM < Rata2
-print("NIM < Rata2 adalah", Bolean)
+print("NIM < Rata2 adalah " + str(Bolean))
 
-print("List suhu 46 sampai 92 (Celcius):", suhu[-4:6]) #POIN PLUS
+print("List suhu 46 sampai 92 (Celcius): " + str(suhu[-4:6])) #POIN PLUS
