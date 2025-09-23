@@ -25,10 +25,10 @@ suhu_Konversi = [suhu_1_F, suhu_2_F, suhu_1_K, suhu_2_K, suhu_1_R, suhu_2_R]
 print("List suhu setelah dikonversikan:")
 print("27° C ke Fahrenheit = " + str(suhu_1_F) + "° F") 
 print("33° C ke Fahrenheit = " + str(suhu_2_F) + "° F") 
-print("46° K ke Kelvin = " + str(suhu_1_K) + "° K") 
-print("55° K ke Kelvin = " + str(suhu_2_K) + "° K") 
-print("67° R ke Reamur = " + str(suhu_1_R) + "° R") 
-print("92° R ke Reamur = " + str(suhu_2_R) + "° R") 
+print("46° C ke Kelvin = " + str(suhu_1_K) + "° K") 
+print("55° C ke Kelvin = " + str(suhu_2_K) + "° K") 
+print("67° C ke Reamur = " + str(suhu_1_R) + "° R") 
+print("92° C ke Reamur = " + str(suhu_2_R) + "° R") 
 
 # Jumlah dan rata-rata suhu konversi
 Jumlah = suhu_1_F + suhu_2_F + suhu_1_K + suhu_2_K + suhu_1_R + suhu_2_R
