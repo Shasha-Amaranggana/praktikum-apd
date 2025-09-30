@@ -136,7 +136,7 @@ if input_un == username and input_pw == password:
         else:
             print("Jenis konversi tidak tersedia atau salah ketik. Ejaan harus sesuai termasuk besar kecil huruf. Silakan coba lagi.")   
 
-    # Salah ketik/Konversi tidak tersedia
+    # Salah ketik/konversi tidak tersedia
     else:
         print("Jenis konversi tidak tersedia atau salah ketik. Ejaan harus sesuai termasuk besar kecil huruf. Silakan coba lagi.")
 
