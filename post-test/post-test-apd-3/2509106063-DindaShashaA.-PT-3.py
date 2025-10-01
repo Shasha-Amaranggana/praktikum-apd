@@ -98,11 +98,11 @@ if input_un == username and input_pw == password:
             yen_rupiah = input("Ingin mengonversikan Yen ke Rupiah atau Rupiah ke Yen? (1/2): ")
             if yen_rupiah == "1":
                 nilai = float(input("Masukkan nilai dalam Yen: "))
-                hasil = nilai * 111.55
+                hasil = nilai * 113.43
                 print("JPY ¥" + str(nilai) + " = Rp" + str(hasil))
             elif yen_rupiah == "2":
                 nilai = float(input("Masukkan nilai dalam Rupiah: "))
-                hasil = nilai / 111.55
+                hasil = nilai / 113.43
                 print("Rp" + str(nilai) + " = JPY ¥" + str(hasil))
             else:
                 print("Jenis konversi tidak tersedia atau salah ketik. Ejaan harus sesuai termasuk besar kecil huruf. Silakan coba lagi.")
@@ -111,11 +111,11 @@ if input_un == username and input_pw == password:
             yuan_rupiah = input("Ingin mengonversikan Yuan ke Rupiah atau Rupiah ke Yuan? (1/2): ")
             if yuan_rupiah == "1":
                 nilai = float(input("Masukkan nilai dalam Yuan: "))
-                hasil = nilai * 2337.90
+                hasil = nilai * 2337.51
                 print("CNY ¥" + str(nilai) + " = Rp" + str(hasil))
             elif yuan_rupiah == "2":
                 nilai = float(input("Masukkan nilai dalam Rupiah: "))
-                hasil = nilai / 2337.90
+                hasil = nilai / 2337.51
                 print("Rp" + str(nilai) + " = CNY ¥" + str(hasil))
             else:
                 print("Jenis konversi tidak tersedia atau salah ketik. Ejaan harus sesuai termasuk besar kecil huruf. Silakan coba lagi.")
@@ -124,11 +124,11 @@ if input_un == username and input_pw == password:
             yen_yuan = input("Ingin mengonversikan Yen ke Yuan atau Yuan ke Yen? (1/2): ")
             if yen_yuan == "1":
                 nilai = float(input("Masukkan nilai dalam Yen: "))
-                hasil = nilai * 0.048
+                hasil = nilai * 0.04852
                 print("JPY ¥" + str(nilai) + " = CNY ¥" + str(hasil))
             elif yen_yuan == "2":
                 nilai = float(input("Masukkan nilai dalam Yuan: "))
-                hasil = nilai / 0.048
+                hasil = nilai / 0.04852
                 print("CNY ¥" + str(nilai) + " = JPY ¥" + str(hasil))
             else:
                 print("Jenis konversi tidak tersedia atau salah ketik. Ejaan harus sesuai termasuk besar kecil huruf. Silakan coba lagi.")     
