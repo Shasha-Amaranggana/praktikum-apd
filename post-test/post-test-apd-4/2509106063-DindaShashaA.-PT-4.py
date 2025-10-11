@@ -45,12 +45,12 @@ while (jawab == "Ya"):
             while True:
                 jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     A_pos += konversi_volume
                     break
                 elif jenis_rhesus == "-":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     A_neg += konversi_volume
                     break
@@ -65,12 +65,12 @@ while (jawab == "Ya"):
             while True:
                 jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     B_pos += konversi_volume
                     break
                 elif jenis_rhesus == "-":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     B_neg += konversi_volume
                     break
@@ -85,12 +85,12 @@ while (jawab == "Ya"):
             while True:
                 jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     Ab_pos += konversi_volume
                     break
                 elif jenis_rhesus == "-":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     Ab_neg += konversi_volume
                     break
@@ -105,12 +105,12 @@ while (jawab == "Ya"):
             while True:
                 jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     O_pos += konversi_volume
                     break
                 elif jenis_rhesus == "-":
-                    jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
+                    jumlah_kantong = float(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
                     O_neg += konversi_volume
                     break
