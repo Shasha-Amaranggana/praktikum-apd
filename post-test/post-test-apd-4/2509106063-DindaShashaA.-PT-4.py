@@ -20,10 +20,9 @@ while True:
     else:
         print("Login gagal! Username dan Password Anda tidak diketahui. Silakan coba lagi.")
 
-print("")
-print(47*"-")
+print(" ")
 print("│││       INPUT DATA DARAH DONOR       │││")
-print("")
+print(" ")
 
 A_pos = 0
 A_neg = 0
@@ -135,9 +134,7 @@ while (jawab == "Ya"):
         else:
             print("Jawaban tidak tersedia! Isi ulang.")
     
-
 print("")
-print(47*"-")
 print("│││  DAFTAR HASIL DARAH YANG TERKUMPUL │││")
 print("")
 
