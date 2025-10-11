@@ -1,7 +1,7 @@
 print("│││    FORM LOGIN    │││")
 
-username = "1"
-password = "1"
+username = "Shasha"
+password = "063"
 print()
 print("Silakan login ke akun Anda.")
 
@@ -33,9 +33,9 @@ Ab_pos = 0
 Ab_neg = 0
 O_pos = 0
 O_neg = 0
-jawab = "Y"
+jawab = "Ya"
 
-while jawab == "Y":
+while (jawab == "Ya"): 
 
     while True:
         jenis_goldar = input("Masukkan jenis golongan darah (A, B, AB, O): ")
@@ -43,7 +43,7 @@ while jawab == "Y":
         # Jika A
         if jenis_goldar == "A":
             while True:
-                jenis_rhesus = input("Masukkan jenis Rhesus (+ atau -): ")
+                jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
                     jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
@@ -54,6 +54,8 @@ while jawab == "Y":
                     konversi_volume = jumlah_kantong * 500
                     A_neg += konversi_volume
                     break
+                elif jenis_rhesus == "":
+                    print("Rhesus tidak boleh kosong! Isi ulang.")
                 else:
                     print("Rhesus tidak diketahui! Isi ulang.")
             break
@@ -61,7 +63,7 @@ while jawab == "Y":
         # Jika B
         elif jenis_goldar == "B":
             while True:
-                jenis_rhesus = input("Masukkan jenis Rhesus (+ atau -): ")
+                jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
                     jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
@@ -72,6 +74,8 @@ while jawab == "Y":
                     konversi_volume = jumlah_kantong * 500
                     B_neg += konversi_volume
                     break
+                elif jenis_rhesus == "":
+                    print("Rhesus tidak boleh kosong! Isi ulang.")
                 else:
                     print("Rhesus tidak diketahui! Isi ulang.")
             break
@@ -79,7 +83,7 @@ while jawab == "Y":
         # Jika AB
         elif jenis_goldar == "AB":
             while True:
-                jenis_rhesus = input("Masukkan jenis Rhesus (+ atau -): ")
+                jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
                     jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
@@ -90,6 +94,8 @@ while jawab == "Y":
                     konversi_volume = jumlah_kantong * 500
                     Ab_neg += konversi_volume
                     break
+                elif jenis_rhesus == "":
+                    print("Rhesus tidak boleh kosong! Isi ulang.")
                 else:
                     print("Rhesus tidak diketahui! Isi ulang.")
             break
@@ -97,7 +103,7 @@ while jawab == "Y":
         # Jika O
         elif jenis_goldar == "O":
             while True:
-                jenis_rhesus = input("Masukkan jenis Rhesus (+ atau -): ")
+                jenis_rhesus = input("Masukkan jenis Rhesus (+ / -): ")
                 if jenis_rhesus == "+":
                     jumlah_kantong = int(input("Masukkan jumlah kantong darah: "))
                     konversi_volume = jumlah_kantong * 500
@@ -108,14 +114,27 @@ while jawab == "Y":
                     konversi_volume = jumlah_kantong * 500
                     O_neg += konversi_volume
                     break
+                elif jenis_rhesus == "":
+                    print("Rhesus tidak boleh kosong! Isi ulang.")
                 else:
                     print("Rhesus tidak diketahui! Isi ulang.")
             break
 
+        elif jenis_goldar == "":
+            print("Golongan darah tidak boleh kosong! Isi ulang.")
         else:
-            print("Golongan darah tidak dikenal! Isi ulang.")
+            print("Golongan darah tidak diketahui! Isi ulang.")
 
-    jawab = input("Apakah Anda masih mau input lagi (Y/T)? ")
+    while True:
+        print("Apakah Anda masih mau input lagi?  (Ya / Tidak)")
+        jawab = input(": ")
+        if jawab == "Ya" or jawab == "Tidak":
+            break
+        elif jawab == "":
+            print("Jawaban tidak boleh kosong! Isi ulang.")
+        else:
+            print("Jawaban tidak tersedia! Isi ulang.")
+    
 
 print("")
 print(50*"-")
