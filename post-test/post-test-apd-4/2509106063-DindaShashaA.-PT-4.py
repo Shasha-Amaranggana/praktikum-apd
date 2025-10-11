@@ -1,4 +1,4 @@
-print("│││    FORM LOGIN    │││")
+print("│││             FORM LOGIN             │││")
 
 username = "Shasha"
 password = "063"
@@ -9,20 +9,20 @@ while True:
     input_un = input("Masukkan Username: ")
     input_pw = input("Masukkan Password: ")
     if input_un == username and input_pw == password:
-        print(f"Selamat datang {username}!")
+        print(f"Login berhasil! Selamat datang {username}!")
         break
     elif input_un == "" or input_pw == "":
-        print("Username dan Password Anda tidak boleh kosong!")
+        print("Login gagal! Username dan Password Anda tidak boleh kosong. Silakan coba lagi.")
     elif input_un != username and input_pw == password:
-        print("Username Anda tidak diketahui! Silakan coba lagi.")
+        print("Login gagal! Username Anda tidak diketahui. Silakan coba lagi.")
     elif input_un == username and input_pw != password:
-        print("Password Anda tidak sesuai! Silakan coba lagi.")
+        print("Login gagal! Password Anda tidak sesuai. Silakan coba lagi.")
     else:
-        print("Username dan Password Anda tidak diketahui! Silakan coba lagi.")
+        print("Login gagal! Username dan Password Anda tidak diketahui. Silakan coba lagi.")
 
 print("")
-print(50*"-")
-print("│││    INPUT DATA DARAH DONOR    │││")
+print(47*"-")
+print("│││       INPUT DATA DARAH DONOR       │││")
 print("")
 
 A_pos = 0
@@ -137,8 +137,8 @@ while (jawab == "Ya"):
     
 
 print("")
-print(50*"-")
-print("│││    DAFTAR HASIL DARAH YANG TERKUMPUL    │││")
+print(47*"-")
+print("│││  DAFTAR HASIL DARAH YANG TERKUMPUL │││")
 print("")
 
 print(f"• Golongan A+ = {A_pos}ml")
