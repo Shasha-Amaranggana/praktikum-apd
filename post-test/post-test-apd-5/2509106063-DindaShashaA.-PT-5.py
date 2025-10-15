@@ -399,7 +399,7 @@ while True:
                 print("")
         input("→ 「 Enter untuk kembali 」")
 
-    # LOGOUT
+    # KELUAR PROGRAM
     # ════════════════════════════════════════════════════
     elif pilih == "3":
         os.system('cls')
