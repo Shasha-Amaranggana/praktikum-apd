@@ -159,8 +159,6 @@ while True:
                             print("Data karakter belum ada.".center(60))
                             print(("═"*20).center(60))
                             print("")
-                            input("→ 「 Enter untuk kembali 」")
-                            continue
                         else:
                             print("NO   NAMA            ELEMEN     SENJATA      PERAN")
                             print("──" * 28)
@@ -168,13 +166,16 @@ while True:
                             for nomor, k in char_meta.items():
                                 print(no,"| ", k["nama"], " "*(14 - len(k["nama"])), k["elemen"], " "*(9 - len(k["elemen"])), k["senjata"], " "*(11 - len(k["senjata"])), k["peran"])
                                 no = no + 1
-                        print("")
-                        print(("═"*50).center(60))
+                            print("")
+                            print(("═"*50).center(60))
                         no_char = input("╰┈➤  Masukkan nomor karakter yang ingin diupdate: ")
                         print("")
 
-                        if no_char.isdigit() and no_char in char_meta:
-                                data = char_meta[no_char]
+                        if no_char.isdigit():
+                            no_char = int(no_char)
+                            if 1 <= no_char <= len(char_meta):
+                                nomor = list(char_meta.keys())[no_char - 1]
+                                data = char_meta[nomor]
 
                                 nama_baru = input(f"Nama baru ({data["nama"]}): ")
                                 if nama_baru == "":
@@ -196,7 +197,7 @@ while True:
                                     peran = data["peran"]
                                 else:
                                     peran = peran_baru
-                                char_meta[no_char] = {
+                                char_meta[nomor] = {
                                     "nama": nama,
                                     "elemen": elemen,
                                     "senjata": senjata,
@@ -207,19 +208,18 @@ while True:
                                 print("Data berhasil diperbarui!".center(60))
                                 print(("═"*20).center(60))
                                 print("")
-                        else:
-                            if not no_char.isdigit():
-                                print("")
-                                print("──" * 17)
-                                print("Input harus diisi dan berupa angka!")
-                                print("──" * 17)
-                                print("")
                             else:
                                 print("")
                                 print("──" * 15)
                                 print("Nomor karakter tidak ditemukan!")
                                 print("──" * 15)
                                 print("")
+                        else:
+                            print("")
+                            print("──" * 17)
+                            print("Input harus berupa angka!")
+                            print("──" * 17)
+                            print("")
                         input("→ 「 Enter untuk kembali 」")
 
                     # DELETE
@@ -252,19 +252,15 @@ while True:
 
                         no_char = input("╰┈➤  Masukkan nomor karakter yang ingin dihapus: ")
                         print("")
-                        if no_char.isdigit() and no_char in char_meta:
-                                hapus = char_meta.pop(no_char)
+                        if no_char.isdigit():
+                            no_char = int(no_char)
+                            if 1 <= no_char <= len(char_meta):
+                                nomor = list(char_meta.keys())[no_char - 1]
+                                hapus = char_meta.pop(nomor)
                                 print("")
                                 print(("═"*20).center(60))
                                 print(f"Karakter {hapus["nama"]} berhasil dihapus!".center(60))
                                 print(("═"*20).center(60))
-                                print("")
-                        else:
-                            if not no_char.isdigit():
-                                print("")
-                                print("──" * 17)
-                                print("Input harus diisi dan berupa angka!")
-                                print("──" * 17)
                                 print("")
                             else:
                                 print("")
@@ -272,6 +268,12 @@ while True:
                                 print("Nomor karakter tidak ditemukan!")
                                 print("──" * 15)
                                 print("")
+                        else:
+                            print("")
+                            print("──" * 17)
+                            print("Input harus berupa angka!")
+                            print("──" * 17)
+                            print("")
                         input("→ 「 Enter untuk kembali 」")
 
                     # Logout admin
@@ -332,8 +334,8 @@ while True:
                             for nomor, k in char_meta.items():
                                 print(no,"| ", k["nama"], " "*(14 - len(k["nama"])), k["elemen"], " "*(9 - len(k["elemen"])), k["senjata"], " "*(11 - len(k["senjata"])), k["peran"])
                                 no = no + 1
-                        print("")
-                        print(("═"*50).center(60))
+                            print("")
+                            print(("═"*50).center(60))
                         input("→ 「 Enter untuk kembali 」")
 
                     elif pilih_user == "2":
@@ -390,7 +392,11 @@ while True:
             print("──" * 12)
             print("")
         else:
-            user_ada = any(data["us"] == username for data in akun.values())
+            user_ada = 0
+            for nomor, user in akun.items():
+                if user["us"] == username:
+                    user_ada = user
+                    break
             if user_ada:
                 print("")
                 print("──" * 12)
@@ -398,8 +404,12 @@ while True:
                 print("──" * 12)
                 print("")
             else:
-                next_id = str(len(akun) + 1)
-                akun[next_id] = {"us": username, "pw": password, "st": "pengguna"}
+                akun.update({
+                    str(len(akun)+1): {
+                        "us": username,
+                        "pw": password,
+                        "st": "pengguna"}
+                })
                 print("")
                 print(("═"*20).center(60))
                 print("Registrasi berhasil! Silakan login.".center(60))
