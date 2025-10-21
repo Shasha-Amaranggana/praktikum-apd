@@ -130,12 +130,7 @@ while True:
                             print("")
                         else:
                             char_meta.update({
-                                str(len(char_meta)+1): {
-                                    "nama": nama,
-                                    "elemen": elemen,
-                                    "senjata": senjata,
-                                    "peran": peran}
-                            })
+                                str(len(char_meta)+1): {"nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran}})
                             print("")
                             print(("═"*20).center(60))
                             print(f"Karakter {nama} berhasil ditambahkan!".center(60))
@@ -159,6 +154,8 @@ while True:
                             print("Data karakter belum ada.".center(60))
                             print(("═"*20).center(60))
                             print("")
+                            input("→ 「 Enter untuk kembali 」")
+                            continue
                         else:
                             print("NO   NAMA            ELEMEN     SENJATA      PERAN")
                             print("──" * 28)
@@ -166,11 +163,11 @@ while True:
                             for nomor, k in char_meta.items():
                                 print(no,"| ", k["nama"], " "*(14 - len(k["nama"])), k["elemen"], " "*(9 - len(k["elemen"])), k["senjata"], " "*(11 - len(k["senjata"])), k["peran"])
                                 no = no + 1
-                            print("")
-                            print(("═"*50).center(60))
+                        print("")
+                        print(("═"*50).center(60))
+                        
                         no_char = input("╰┈➤  Masukkan nomor karakter yang ingin diupdate: ")
                         print("")
-
                         if no_char.isdigit():
                             no_char = int(no_char)
                             if 1 <= no_char <= len(char_meta):
@@ -197,12 +194,7 @@ while True:
                                     peran = data["peran"]
                                 else:
                                     peran = peran_baru
-                                char_meta[nomor] = {
-                                    "nama": nama,
-                                    "elemen": elemen,
-                                    "senjata": senjata,
-                                    "peran": peran
-                                }
+                                char_meta[nomor] = {"nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran}
                                 print("")
                                 print(("═"*20).center(60))
                                 print("Data berhasil diperbarui!".center(60))
