@@ -431,4 +431,3 @@ while True:
         print("──" * 14)
         print("")
         input("→ 「 Enter untuk kembali 」")
-
