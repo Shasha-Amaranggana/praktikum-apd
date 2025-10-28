@@ -2,7 +2,7 @@
 # ════════════════════════════════════════════════════
 import os
 akun = {
-    "1" : {"us" : "1", "pw" : "1", "st" : "admin"}}
+    "1" : {"us" : "admin", "pw" : "admin123", "st" : "admin"}}
 char_meta = {
     "1": {"nama": "Mavuika", "elemen": "Pyro", "senjata": "Claymore", "peran": "Main DPS"},
     "2": {"nama": "Neuvillette", "elemen": "Hydro", "senjata": "Catalyst", "peran": "Main DPS"},
