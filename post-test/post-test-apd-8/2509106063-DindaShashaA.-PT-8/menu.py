@@ -52,12 +52,8 @@ def no_char(jenis):
             pesan_peringatan("Nomor karakter tidak ditemukan!", 15)
             return None
         nomor = list(char_meta.keys())[nom - 1]
-        if jenis == "update": 
-            data = char_meta[nomor]
-            return data, nomor
-        if jenis == "hapus":
-            hapus = char_meta.pop(nomor)
-            return hapus, nomor
+        data = char_meta[nomor]
+        return data, nomor
     
 def inp_update(jenis, data):
     pesan_dict = {

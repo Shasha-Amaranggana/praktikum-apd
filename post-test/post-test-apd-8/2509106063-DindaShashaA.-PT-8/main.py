@@ -8,7 +8,7 @@ from crud import read_char, create_char, update_char, hapus_char, daftar_request
 # PROGRAM UTAMA
 # ════════════════════════════════════════════════════
 while True:
-    jud_utama()
+    jud_utama() 
     jud_sub("Selamat Datang")
     print("")
     pilih = tamp_menu("awal")

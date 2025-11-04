@@ -1,6 +1,6 @@
 from prettytable import PrettyTable
 from data import char_meta, request_meta
-from help import pesan_peringatan, pesan_berhasil
+from help import pesan_peringatan, pesan_berhasil, next_key
 from menu import valid, no_char, inp_update
 
 def read_char():
@@ -36,8 +36,7 @@ def create_char():
     if nama == "" or elemen in (None, "Gagal") or senjata in (None, "Gagal") or peran in (None, "Gagal"):
         pesan_peringatan("Pastikan semua kolom diisi dengan benar dan sesuai!", 26)
         return None
-    char_meta.update({
-        str(len(char_meta)+1): {"nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran}})
+    char_meta[next_key(char_meta)] = {"nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran}
     pesan_berhasil(f"Karakter {nama} berhasil ditambahkan!")
 
 def update_char():
@@ -85,6 +84,7 @@ def hapus_char():
     hasil = no_char("hapus")
     if hasil:
         hapus, nomor = hasil
+        char_meta.pop(nomor)
         pesan_berhasil(f"Karakter {hapus['nama']} berhasil dihapus!")
 
 def daftar_request():
@@ -114,9 +114,10 @@ def daftar_request():
     if hasil:
         data, nomor = hasil
         print("")
-        konfirm = input(f"Ingin menyetujui request karakter '{data['nama']}' dari pengguna '{data['pengusul']}' (y/n)? ")
+        konfirm = input(f"""╰┈➤  Masukkan jawaban anda atas request karakter '{data['nama']}' dari pengguna
+'{data['pengusul']}' [y/n]: """)
         if konfirm == "y":
-            char_meta[str(len(char_meta)+1)] = {"nama": data["nama"], "elemen": data["elemen"], "senjata": data["senjata"], "peran": data["peran"]}
+            char_meta[next_key(char_meta)] = {"nama": data["nama"], "elemen": data["elemen"], "senjata": data["senjata"], "peran": data["peran"]}
             request_meta.pop(nomor)
             pesan_berhasil(f"Request {data['nama']} disetujui dan ditambahkan ke daftar!")
         elif konfirm == "n":
@@ -139,5 +140,6 @@ def request_char(username):
     if nama == "" or elemen in (None, "Gagal") or senjata in (None, "Gagal") or peran in (None, "Gagal"):
         pesan_peringatan("Pastikan semua kolom diisi dengan benar dan sesuai!", 26)
         return None
-    request_meta [str(len(request_meta)+1)] = {"nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran, "pengusul": username}
+    request_meta[next_key(request_meta)] = {
+        "nama": nama, "elemen": elemen, "senjata": senjata, "peran": peran, "pengusul": username}
     pesan_berhasil(f"Request anda telah dikirim ke admin!")

@@ -27,3 +27,14 @@ def pesan_peringatan(pesan, jumlah):
     print(("──" * jumlah).center(70))
     print(("═" * 40).center(70))
     print("")
+
+def next_key(dict):
+    if not dict:
+        return "1"
+    nums = []
+    for k in dict.keys():
+        if k.isdigit():
+            nums.append(int(k))
+    if not nums:
+        return "1"
+    return str(max(nums) + 1)
